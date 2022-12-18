@@ -48,10 +48,9 @@ public class ShowTestImages {
 		TEST_IMAGES.put("/gimp.bricks.pgm", 4);
 		TEST_IMAGES.put("/gimp.fabi.ppm", 2);
 	}
-	
+
 	/**
-	 * Class to load and show an image in a JFrame with a specified 
-	 * scale factor. 
+	 * Class to load and show an image in a JFrame with a specified scale factor.
 	 */
 	private static class ImageJFrame {
 		ImageJFrame(String image, int scaleFactor) throws IOException {
@@ -59,7 +58,7 @@ public class ShowTestImages {
 			f.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 			BufferedImage img = ImageIO.read(getClass().getResourceAsStream(image));
 			ImageIcon icon = new ImageIcon(img.getScaledInstance(
-					img.getWidth()*scaleFactor, img.getHeight()*scaleFactor, 
+					img.getWidth() * scaleFactor, img.getHeight() * scaleFactor,
 					Image.SCALE_DEFAULT));
 			f.add(new JLabel(icon));
 			f.pack();
@@ -68,24 +67,25 @@ public class ShowTestImages {
 	}
 
 	/**
-	 * Loop through the list of images, load them one by one and show the
-	 * load time for each image. 
+	 * Loop through the list of images, load them one by one and show the load time
+	 * for each image.
+	 * 
 	 * @throws IOException
 	 */
 	private void loadTimes() throws IOException {
-		for (Entry<String, Integer> image: TEST_IMAGES.entrySet()) {
+		for (Entry<String, Integer> image : TEST_IMAGES.entrySet()) {
 			long startTime = System.currentTimeMillis();
 			ImageIO.read(getClass().getResourceAsStream(image.getKey()));
-			System.out.format("%s: %d ms\n", image.getKey(), 
-					System.currentTimeMillis()-startTime);
+			System.out.format("%s: %d ms\n", image.getKey(),
+					System.currentTimeMillis() - startTime);
 		}
 	}
-	
+
 	/**
 	 * Loop through the list of images and show each one in a JFrame.
 	 */
 	private void showAllImages() {
-		for (Entry<String, Integer> image: TEST_IMAGES.entrySet()) {
+		for (Entry<String, Integer> image : TEST_IMAGES.entrySet()) {
 			SwingUtilities.invokeLater(() -> {
 				try {
 					new ImageJFrame(image.getKey(), image.getValue());
@@ -95,19 +95,19 @@ public class ShowTestImages {
 			});
 		}
 	}
-	
+
 	/**
-	 * Trivial test app, it (1) shows a list of image types supported by 
-	 * ImageIO (now including Netpbm files), (2) loads test images from 
-	 * the resources folder and displays their load times and (3) loads
-	 * test images from the resources folder and displays them.
-	 * @param args
-	 * 		Not used.
+	 * Trivial test app, it (1) shows a list of image types supported by ImageIO
+	 * (now including Netpbm files), (2) loads test images from the resources folder
+	 * and displays their load times and (3) loads test images from the resources
+	 * folder and displays them.
+	 * 
+	 * @param args Not used.
 	 * @throws IOException
 	 */
 	public static void main(String[] args) throws IOException {
-		
-		for (String format: ImageIO.getReaderFormatNames()) {
+
+		for (String format : ImageIO.getReaderFormatNames()) {
 			System.out.println(format);
 		}
 

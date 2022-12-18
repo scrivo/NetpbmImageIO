@@ -141,8 +141,9 @@ class NetpbmUtil {
 	}
 	
 	/**
-	 * Read string tokens (grayscale values or RGB tokens) from the stream 
-	 * into an image row.
+	 * Read string tokens (grayscale values or RGB tokens) from the stream into an
+	 * image row.
+	 * 
 	 * @param stream
 	 * 		The stream from which to read the image.
 	 * @param rowBuf
@@ -177,7 +178,7 @@ class NetpbmUtil {
 			int maxColorValue) throws IOException {
 		int numRead = stream.read(rowBuf);
 		for (int i=0; i<rowBuf.length && i < numRead; i++) {
-			rowBuf[i] = (byte)(rowBuf[i] * 255 / maxColorValue);  
+			rowBuf[i] = (byte) (rowBuf[i] * 255 / maxColorValue);
 		}
 	}
 

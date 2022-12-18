@@ -30,9 +30,9 @@ class NetpbmHeader {
 	public int getWidth() {
 		return width;
 	}
+	
 	/**
-	 * @param width
-	 * 		The width of the image.
+	 * @param width The width of the image.
 	 */
 	public void setWidth(int width) {
 		this.width = width;
