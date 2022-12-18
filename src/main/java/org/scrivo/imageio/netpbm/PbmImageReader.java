@@ -27,7 +27,7 @@ import javax.imageio.stream.ImageInputStream;
  * 
  * Note: this implementation does not include thumbnails and metadata.
  * 
- * @See https://docs.oracle.com/javase/8/docs/technotes/guides/imageio/spec/extending.fm1.html
+ * @see <a href="https://docs.oracle.com/javase/8/docs/technotes/guides/imageio/spec/extending.fm1.html">Writing Image I/O Plug-ins</a>
  */
 public class PbmImageReader extends ImageReader {
 

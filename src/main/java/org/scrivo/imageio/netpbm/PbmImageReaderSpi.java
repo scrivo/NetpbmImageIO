@@ -16,7 +16,7 @@ import javax.imageio.stream.ImageInputStream;
  * must provide an implementation of the canDecodeInput method, which is used to
  * locate plug-ins based on the contents of a source image file.
  * 
- * @See https://docs.oracle.com/javase/8/docs/technotes/guides/imageio/spec/extending.fm1.html
+ * @see <a href="https://docs.oracle.com/javase/8/docs/technotes/guides/imageio/spec/extending.fm1.html">Writing Image I/O Plug-ins</a>
  */
 public class PbmImageReaderSpi extends ImageReaderSpi {
 

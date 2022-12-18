@@ -125,8 +125,6 @@ class NetpbmUtil {
 	 * 		The stream from which to read the image.
 	 * @param rowBuf
 	 * 		The buffer to store the output data (one bitmap line).
-	 * @param maxColorValue
-	 * 		The maximum color value supported by the image.
 	 * @throws IOException
 	 */
 	static void readBitDataLineRaw(ImageInputStream stream, byte[] rowBuf) 
